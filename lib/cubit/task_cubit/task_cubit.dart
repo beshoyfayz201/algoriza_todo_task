@@ -64,10 +64,8 @@ class TaskCubit extends Cubit<TaskState> {
     emit(ChangeCompletedState());
   }
 
-  changeFavouriteState({required int id, required int value}) {
-    emit(LoadingState());
-
-    databaseHelper.changeCompleteState(value, id);
+  changeFavouriteState({required int id, required int value}) async {
+    await databaseHelper.changeFavouraiteState(value, id);
 
     refreshLists();
 

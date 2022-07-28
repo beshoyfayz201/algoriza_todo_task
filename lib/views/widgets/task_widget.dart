@@ -1,3 +1,4 @@
+import 'package:algoriza_todo/cubit/input_cubit/cubit/input_cupit_cubit.dart';
 import 'package:algoriza_todo/cubit/task_cubit/task_cubit.dart';
 import 'package:algoriza_todo/models/task.dart';
 import 'package:algoriza_todo/shared/colors.dart';
@@ -23,7 +24,22 @@ class TaskWidget extends StatelessWidget {
                 .changecompleteState(id: task.id!, value: integerVal);
           },
         ),
-        Text(task.title)
+        Text(task.title),
+        const Spacer(),
+        IconButton(
+            onPressed: () async {
+              print(task.isFavourite);
+              int value = task.isFavourite == 0 ? 1 : 0;
+              await TaskCubit.get(context)
+                  .changeFavouriteState(id: task.id!, value: value);
+              await TaskCubit.get(context).getAll();
+            },
+            icon: Icon(
+              (task.isFavourite == 0)
+                  ? Icons.favorite_border_outlined
+                  : Icons.favorite,
+              color: (task.isFavourite == 0) ? Colors.grey : Colors.red,
+            ))
       ],
     );
   }

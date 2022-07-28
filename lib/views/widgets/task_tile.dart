@@ -50,7 +50,7 @@ class TaskTile extends StatelessWidget {
             (task.isCompleted == 0)
                 ? Icons.circle_outlined
                 : Icons.check_circle_rounded,
-            color: Colors.grey.shade300,
+            color: Colors.white,
             size: getProportionateScreenHeight(25),
           ),
         ],

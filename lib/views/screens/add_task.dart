@@ -215,7 +215,7 @@ class AddTask extends StatelessWidget {
                             NotifyHelper().schedulNotification(
                                 hour,
                                 min,
-                                t,
+                               TaskCubit.get(context).tasks.last,
                                 t.remind, //---------------change it
                                 DateFormat.yMd().parse(t.date));
 

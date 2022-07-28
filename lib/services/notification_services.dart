@@ -26,7 +26,7 @@ class NotifyHelper {
 
 //tz.setLocalLocation(tz.getLocation(timeZoneName));
     final AndroidInitializationSettings initializationSettingsAndroid =
-        const AndroidInitializationSettings('b');
+        const AndroidInitializationSettings('embty');
 
     final InitializationSettings initializationSettings =
         InitializationSettings(

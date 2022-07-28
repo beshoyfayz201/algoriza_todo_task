@@ -43,7 +43,7 @@ class DBHelper {
 
   changeFavouraiteState(int value, int id) async {
     await database!
-        .rawQuery("UPDATE TASKS SET isCompleted = ? where id = ?", [value, id]);
+        .rawQuery("UPDATE TASKS SET isFavourite = ? where id = ?", [value, id]);
   }
 
   Future<List<Task>> getAll() async {
