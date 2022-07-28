@@ -173,6 +173,19 @@ class ScheduleScreen extends StatelessWidget {
                           Navigator.of(context).pop();
                         },
                         color: Colors.green,
+                        txt: "favourite"),
+                           buildSheetBotton(
+                        onTap: () async {
+                          await TaskCubit.get(context).changeFavouriteState(
+                              id: task.id!,
+                              value: (task.isFavourite == 0) ? 1 : 0);
+                          // await NotifyHelper()
+                          //     .flutterLocalNotificationsPlugin
+                          //     .cancel(task.id!);
+
+                          Navigator.of(context).pop();
+                        },
+                        color: Colors.green,
                         txt: "complete"),
                   buildSheetBotton(
                       onTap: () async {
