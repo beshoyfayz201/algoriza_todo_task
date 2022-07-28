@@ -2,7 +2,6 @@ import 'package:algoriza_todo/cubit/task_cubit/task_cubit.dart';
 import 'package:algoriza_todo/cubit/task_cubit/task_state.dart';
 import 'package:algoriza_todo/models/task.dart';
 import 'package:algoriza_todo/shared/size_config.dart';
-import 'package:algoriza_todo/views/screens/add_task.dart';
 import 'package:algoriza_todo/views/widgets/appbar.dart';
 import 'package:algoriza_todo/views/widgets/task_tile.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';

@@ -1,10 +1,11 @@
 import 'package:algoriza_todo/cubit/input_cubit/cubit/input_cupit_cubit.dart';
+import 'package:algoriza_todo/cubit/search_cubit/search_cubit.dart';
 import 'package:algoriza_todo/cubit/task_cubit/task_cubit.dart';
 
 import 'package:algoriza_todo/services/db_helper.dart';
 import 'package:algoriza_todo/services/notification_services.dart';
 import 'package:algoriza_todo/views/screens/add_task.dart';
-import 'package:algoriza_todo/views/screens/home_screen.dart';
+import 'package:algoriza_todo/views/screens/board_screen.dart';
 import 'package:algoriza_todo/views/screens/schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     NotifyHelper().initNotification(context);
+    NotifyHelper().initNotification(context);
     return MultiBlocProvider(
         providers: [
           BlocProvider(
@@ -29,6 +30,9 @@ class App extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => InputCubit(),
+          ),
+          BlocProvider(
+            create: (context) => SearchCubit(),
           ),
         ],
         child: MaterialApp(

@@ -5,10 +5,10 @@ import 'package:algoriza_todo/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class TaskWidget extends StatelessWidget {
-  final Function onpressed;
   final Task task;
-  const TaskWidget({Key? key, required this.onpressed, required this.task})
+  const TaskWidget({Key? key, required this.task})
       : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
